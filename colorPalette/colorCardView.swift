@@ -8,23 +8,23 @@ struct colorCardView: View {
     var body: some View {
         let rectangleColor = colorFromHex(hexCode)
         
-        GeometryReader { geometry in
-            VStack {
-                Rectangle()
-                    .frame(width: 140, height: 140)
-                    .foregroundColor(rectangleColor)
-                    .cornerRadius(10)
-                    .padding([.top, .leading, .trailing], 10)
-                Text(hexCode)
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding(.bottom, 10)
-            }
-            .background(Color.white)
-            .cornerRadius(10)
-            .shadow(radius: 5)
-            .padding()
+        VStack {
+            Rectangle()
+                .frame(width: 140, height: 140)
+                .foregroundColor(rectangleColor)
+                .cornerRadius(10)
+                .padding([.top, .leading, .trailing], 10)
+            Text(hexCode)
+                .font(.system(size: 26))
+                .fontWeight(.bold)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
+                .padding(.bottom, 10)
         }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 5)
+        .padding()
     }
 }
 

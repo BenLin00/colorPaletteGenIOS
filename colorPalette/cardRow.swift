@@ -3,15 +3,14 @@
 import SwiftUI
 
 struct cardRow: View {
-    @State var hexCode: String = generateHexCode()  // Keep @State here
+    @Binding var hexCode: String
     
     var body: some View {
         HStack(spacing: 10) {
-            colorCardView(hexCode: $hexCode)  // Pass a binding to hexCode
-                .padding()
+            colorCardView(hexCode: $hexCode)  // Pass binding to hexCode
             VStack {
                 Button(action: {
-                    // Action for the first button
+                    // TODO: Action for the first button
                 }) {
                     Text("Copy Hexcode")
                     .padding()
@@ -22,7 +21,6 @@ struct cardRow: View {
                 }.shadow(radius: 5)
                                
                 Button(action: {
-                    // Action for the second button
                     shuffleColor()
                 }) {
                     Text("Shuffle Color")
@@ -37,13 +35,13 @@ struct cardRow: View {
     }
     
     func shuffleColor() {
-        hexCode = generateHexCode()  // This will now update the hexCode in both cardRow and colorCardView
+        hexCode = generateHexCode()  // Update hexCode in cardRow and colorCardView
     }
 }
 
 
 struct cardRow_Previews: PreviewProvider {
     static var previews: some View {
-        cardRow()
+        cardRow(hexCode: .constant("#FF5733"))  // Provide constant binding for preview
     }
 }

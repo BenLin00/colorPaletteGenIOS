@@ -1,7 +1,8 @@
-
 import SwiftUI
 
 struct ContentView: View {
+    @State var hexCodes: [String] = Array(repeating: generateHexCode(), count: 4)
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -15,23 +16,32 @@ struct ContentView: View {
                     .foregroundColor(.peachColor)
                 
                 Rectangle()
-                    .frame(height: 1) // Set the height of the line
+                    .frame(height: 1)
                     .foregroundColor(.black)
             }
-            .padding(.bottom, 10) // Add space below the text and the line
-            .frame(maxHeight: .infinity, alignment: .top)
+            .padding(.bottom, 10)
             
-            // Additional content below the line
+            Button("Shuffle All") {
+                shuffleAll()
+            }
+            .padding()
+            .background(Color.peachColor)
+            .foregroundColor(.white)
+            .cornerRadius(10)
             
-            paletteView()
-            
+            // Add paletteView here
+            paletteView(hexCodes: $hexCodes)
         }
         .padding()
+    }
+    
+    func shuffleAll() {
+        hexCodes = hexCodes.map { _ in generateHexCode() }
     }
 }
 
 extension Color {
-    static let peachColor = Color(red: 0.9, green: 0.6, blue: 0.4) // Adjust RGB values as needed
+    static let peachColor = Color(red: 0.9, green: 0.6, blue: 0.4)
 }
 
 struct ContentView_Previews: PreviewProvider {
