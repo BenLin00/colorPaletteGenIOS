@@ -1,15 +1,17 @@
-// Copyright © 2023 Snap, Inc. All rights reserved.
+// cardRow.swift
 
 import SwiftUI
 
 struct cardRow: View {
+    @State var hexCode: String = generateHexCode()  // Keep @State here
+    
     var body: some View {
         HStack(spacing: 10) {
-            colorCardView()
+            colorCardView(hexCode: $hexCode)  // Pass a binding to hexCode
                 .padding()
             VStack {
                 Button(action: {
-                // Action for the first button
+                    // Action for the first button
                 }) {
                     Text("Copy Hexcode")
                     .padding()
@@ -21,6 +23,7 @@ struct cardRow: View {
                                
                 Button(action: {
                     // Action for the second button
+                    shuffleColor()
                 }) {
                     Text("Shuffle Color")
                     .padding()
@@ -32,7 +35,13 @@ struct cardRow: View {
             }
         }
     }
+    
+    func shuffleColor() {
+        hexCode = generateHexCode()  // This will now update the hexCode in both cardRow and colorCardView
+    }
 }
+
+
 struct cardRow_Previews: PreviewProvider {
     static var previews: some View {
         cardRow()

@@ -14,6 +14,7 @@
 		07DD35D32AADF48D00B52E5E /* colorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35D22AADF48D00B52E5E /* colorCardView.swift */; };
 		07DD35D52AADF74900B52E5E /* cardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35D42AADF74900B52E5E /* cardRow.swift */; };
 		07DD35D92AADFB0F00B52E5E /* paletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35D82AADFB0F00B52E5E /* paletteView.swift */; };
+		07DD35DD2AAE06EB00B52E5E /* colorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35DC2AAE06EB00B52E5E /* colorUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		07DD35D22AADF48D00B52E5E /* colorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorCardView.swift; sourceTree = "<group>"; };
 		07DD35D42AADF74900B52E5E /* cardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardRow.swift; sourceTree = "<group>"; };
 		07DD35D82AADFB0F00B52E5E /* paletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paletteView.swift; sourceTree = "<group>"; };
+		07DD35DC2AAE06EB00B52E5E /* colorUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				07DD35D22AADF48D00B52E5E /* colorCardView.swift */,
 				07DD35D42AADF74900B52E5E /* cardRow.swift */,
 				07DD35D82AADFB0F00B52E5E /* paletteView.swift */,
+				07DD35DC2AAE06EB00B52E5E /* colorUtilities.swift */,
 			);
 			path = colorPalette;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07DD35DD2AAE06EB00B52E5E /* colorUtilities.swift in Sources */,
 				07DD35C72AAD5FE700B52E5E /* ContentView.swift in Sources */,
 				07DD35C52AAD5FE700B52E5E /* colorPaletteApp.swift in Sources */,
 				07DD35D52AADF74900B52E5E /* cardRow.swift in Sources */,
