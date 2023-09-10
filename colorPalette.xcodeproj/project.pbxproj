@@ -11,6 +11,9 @@
 		07DD35C72AAD5FE700B52E5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35C62AAD5FE700B52E5E /* ContentView.swift */; };
 		07DD35C92AAD5FE800B52E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DD35C82AAD5FE800B52E5E /* Assets.xcassets */; };
 		07DD35CC2AAD5FE800B52E5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DD35CB2AAD5FE800B52E5E /* Preview Assets.xcassets */; };
+		07DD35D32AADF48D00B52E5E /* colorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35D22AADF48D00B52E5E /* colorCardView.swift */; };
+		07DD35D52AADF74900B52E5E /* cardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35D42AADF74900B52E5E /* cardRow.swift */; };
+		07DD35D92AADFB0F00B52E5E /* paletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DD35D82AADFB0F00B52E5E /* paletteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		07DD35C62AAD5FE700B52E5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		07DD35C82AAD5FE800B52E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07DD35CB2AAD5FE800B52E5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		07DD35D22AADF48D00B52E5E /* colorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorCardView.swift; sourceTree = "<group>"; };
+		07DD35D42AADF74900B52E5E /* cardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardRow.swift; sourceTree = "<group>"; };
+		07DD35D82AADFB0F00B52E5E /* paletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paletteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,9 @@
 				07DD35C62AAD5FE700B52E5E /* ContentView.swift */,
 				07DD35C82AAD5FE800B52E5E /* Assets.xcassets */,
 				07DD35CA2AAD5FE800B52E5E /* Preview Content */,
+				07DD35D22AADF48D00B52E5E /* colorCardView.swift */,
+				07DD35D42AADF74900B52E5E /* cardRow.swift */,
+				07DD35D82AADFB0F00B52E5E /* paletteView.swift */,
 			);
 			path = colorPalette;
 			sourceTree = "<group>";
@@ -139,6 +148,9 @@
 			files = (
 				07DD35C72AAD5FE700B52E5E /* ContentView.swift in Sources */,
 				07DD35C52AAD5FE700B52E5E /* colorPaletteApp.swift in Sources */,
+				07DD35D52AADF74900B52E5E /* cardRow.swift in Sources */,
+				07DD35D92AADFB0F00B52E5E /* paletteView.swift in Sources */,
+				07DD35D32AADF48D00B52E5E /* colorCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
