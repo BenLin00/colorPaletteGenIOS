@@ -1,16 +1,15 @@
-// cardRow.swift
-
 import SwiftUI
 
 struct cardRow: View {
     @Binding var hexCode: String
-    
+    @Binding var showNotification: Bool
+
     var body: some View {
         HStack(spacing: 10) {
             colorCardView(hexCode: $hexCode)  // Pass binding to hexCode
             VStack {
                 Button(action: {
-                    // TODO: Action for the first button
+                    copyToClipboard()
                 }) {
                     Text("Copy Hexcode")
                     .padding()
@@ -19,7 +18,7 @@ struct cardRow: View {
                     .foregroundColor(.black)
                     .cornerRadius(30)
                 }.shadow(radius: 5)
-                               
+            
                 Button(action: {
                     shuffleColor()
                 }) {
@@ -35,13 +34,26 @@ struct cardRow: View {
     }
     
     func shuffleColor() {
-        hexCode = generateHexCode()  // Update hexCode in cardRow and colorCardView
+        hexCode = generateHexCode()
+    }
+    
+    func copyToClipboard() {
+        UIPasteboard.general.string = hexCode
+        withAnimation {
+            showNotification = true
+        }
+        
+        // Hide notification after 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            withAnimation {
+                showNotification = false
+            }
+        }
     }
 }
 
-
 struct cardRow_Previews: PreviewProvider {
     static var previews: some View {
-        cardRow(hexCode: .constant("#FF5733"))  // Provide constant binding for preview
+        cardRow(hexCode: .constant("#FF5733"), showNotification: .constant(false))  // Provide constant bindings for preview
     }
 }

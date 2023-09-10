@@ -1,38 +1,45 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var hexCodes: [String] = Array(repeating: generateHexCode(), count: 4)
+    @State var hexCodes: [String] = Array(repeating: "", count: 4).map { _ in generateHexCode() }
+    @State var showNotification: Bool = false
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.peachColor)
-            
+        ZStack(alignment: .top) {
             VStack {
-                Text("Color Palette Generator")
-                    .font(.system(size: 30))
-                    .bold()
-                    .foregroundColor(.peachColor)
+                VStack {
+                    Text("Color Palette Generator")
+                        .font(.system(size: 30))
+                        .bold()
+                        .foregroundColor(.peachColor)
+                    
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(.black)
+                }
+                .padding(.bottom, 10)
                 
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(.black)
-            }
-            .padding(.bottom, 10)
-            
-            Button("Shuffle All") {
-                shuffleAll()
+                Button("Shuffle All") {
+                    shuffleAll()
+                }
+                .padding()
+                .background(Color.peachColor)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                
+                paletteView(hexCodes: $hexCodes, showNotification: $showNotification)
             }
             .padding()
-            .background(Color.peachColor)
-            .foregroundColor(.white)
-            .cornerRadius(10)
             
-            // Add paletteView here
-            paletteView(hexCodes: $hexCodes)
+            if showNotification {
+                Text("Copied to clipboard")
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.green)
+                    .transition(.move(edge: .top))
+            }
         }
-        .padding()
     }
     
     func shuffleAll() {
